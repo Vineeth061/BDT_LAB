@@ -1,0 +1,39 @@
+n <- as.integer(readline(prompt = "Enter no of Employee"))
+
+empId <- vector(mode = "integer",length = n)
+empName <- vector(mode = "character",length = n)
+empDoj <- vector(mode = "character",length = n)
+empDept <- vector(mode = "character",length = n)
+empDesig <- vector(mode = "character",length = n)
+
+print("Enter the employee details:")
+
+for(i in 1:n){
+  print("Employee no:",i)
+  empId[i]<-as.integer(readline("Enter id:"))
+  empName[i]<-as.character(readline("Enter name:"))
+  empDoj[i]<-as.character(readline("Enter Doj:"))
+  empDept <-as.character(readline("Enter dept:"))
+  empDesig <-as.character(readline("Enter desig:"))
+}
+
+emp = data.frame(empId,empName,empDoj,empDept,empDesig)
+print("Employee details are:")
+print(emp)
+
+write.csv(emp,"D:/3rd year/6th sem/BDT LAB/Rstudio/employee.csv")
+
+readfile = read.csv("D:/3rd year/6th sem/BDT LAB/Rstudio/employee.csv")
+
+print("Enter new row:")
+
+id <- as.integer(readline("Enter new id:"))
+name<-as.character(readline("Enter new name:"))
+doj<- as.character(readline("Enter new doj:"))
+dept<-as.character(readline("Enter new dept:"))
+desig<-as.character(readline("Enter new desig:"))
+
+new <- data.frame(id,name,doj,dept,desig)
+
+write.table(new,"D:/3rd year/6th sem/BDT LAB/Rstudio/employee.csv",col.names = FALSE,append = TRUE,row.names = TRUE,quote = FALSE,sep = ",")
+
