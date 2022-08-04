@@ -45,3 +45,6 @@ object scalaWordCount{
 		println(wordcount)
 	}
 }  
+
+
+sbt "run //home//student//wc.txt"
