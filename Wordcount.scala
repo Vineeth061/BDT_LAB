@@ -44,4 +44,4 @@ object scalaWordCount{
 			printf("Word %s occurs %d times\n", k,v)
 		println(wordcount)
 	}
-}
+}  
